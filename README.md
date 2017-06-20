@@ -15,11 +15,11 @@ The `utils.py` contains a few helper functions: `get_depth` computes the depth o
 
 Usage is designed for time series datasets in the following format:
 ```
-Caller   [NA]   Callee   [NA]   Timestamp   [Duration]
+Caller   [NA]   Callee   [NA]   Timestamp   [Duration]   Day
 ```
-The "NA"s can be additional information about the caller/callee/call (such as a tower location), or just blank.  The duration field is also not used in this implementation, and can be blank.  Unfortunately these index locations are hard-coded as of now, so if your data takes a different form you need to coerce it with blank columns into this format.  This is on the to-do list to clean up...
+The "NA"s can be additional information about the caller/callee/call (such as a tower location), or just blank.  The duration field is also not used in this implementation, and can be blank.  The Day field should be a sequential index of what 24-hour period the timestamp refers to.  Unfortunately these index locations are hard-coded as of now, so if your data takes a different form you need to coerce it with blank columns into this format.  This is on the to-do list to clean up...
 
-Given a dataset like this, called `df`, you can call
+Given a dataset like this, called `df`, you can call:
 ```
 from cascades import Cascades
 
